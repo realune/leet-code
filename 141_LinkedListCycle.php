@@ -15,22 +15,18 @@ class Solution {
      * @return Boolean
      */
     function hasCycle($head) {
-        if (is_null($head)) {
-            return false;
-        }
+        if (is_null($head)) return false;
         
         $fast = $head;
         $slow = $head;
         
-        while(!is_null($fast)) {
+        while (!is_null($fast)) {
             if (is_null($fast->next)) return false;
 
             $fast = $fast->next->next;
             $slow = $slow->next;
             
-            if ($fast === $slow) {
-                return true;
-            }
+            if ($fast === $slow) return true;
         }
         return false;
     }
